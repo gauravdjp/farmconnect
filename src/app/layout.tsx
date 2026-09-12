@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Navbar } from "@/components/layout/Navbar";
-import { Footer } from "@/components/layout/Footer";
+import { AppShell } from "@/components/layout/AppShell";
 
 export const metadata: Metadata = {
-  title: "FarmConnect — Direct Farmer-to-Consumer Digital Marketplace",
+  title: "MetroSense OIML R-76 — Legal Metrology Test Report System",
   description:
-    "Direct agricultural marketplace connecting farmers and FPOs with consumers and bulk buyers with AI demand forecasting and smart route logistics.",
+    "Software Application for Generation of Test Reports for Non-Automatic Weighing Instruments (NAWI) as per OIML Recommendation R-76. Ministry of Consumer Affairs, Food & Public Distribution, Department of Consumer Affairs (DoCA).",
 };
 
 export default function RootLayout({
@@ -16,10 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="min-h-screen flex flex-col font-sans bg-[#fcfbf9] text-stone-900 selection:bg-emerald-100 selection:text-emerald-900">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+      <body className="min-h-screen bg-background text-foreground antialiased font-sans">
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );
